@@ -1,0 +1,1183 @@
+/* Importing the fonts */
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coldiac&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unlock&display=swap');
+
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+html, body {
+    height: 100%;
+}
+
+.navsection {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+/* Styles for Navbar in Mobile View */
+/* @media (max-width: 991px) {
+    
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 40px;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+
+    .collapse.navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        height: 100vh;
+        width: 300px;
+        background-color: black;
+        transition: all 0.5s ease;
+        z-index: 99;
+    }
+
+    .collapse.show {
+        right: 0; 
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        text-align: left;
+        padding: 30px 15px;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 20px 0;
+    }
+
+    .navbar-nav .nav-link {
+        color: #fff;
+        font-size: 20px;
+    }
+
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 17px;
+        color: #fff;
+        margin-right: 25px;
+        padding: 5px 15px;
+        font-family: 'Unlock', sans-serif;
+        font-weight: bold;
+        position: relative;
+    }
+    
+    .navbar-nav .nav-link::before {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #ff1177;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .navbar-nav .nav-link:hover::before {
+        width: 100%;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: #ff1177;
+        text-shadow: 0px 0px 10px #ff1177, 0px 0px 20px #ff1177;
+    }
+    
+} */
+
+/* General styles for mobile navbar */
+@media (max-width: 991px) {
+
+    /* Close button for mobile menu */
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 40px;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    /* Navbar sliding effect from right to left */
+    .collapse.navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Initially off-screen */
+        height: 100vh;
+        width: 300px;
+        background-color: black;
+        transition: all 0.5s ease;
+        z-index: 99;
+    }
+
+    /* When toggled (menu shown) */
+    .collapse.show {
+        right: 0; /* Slide in from the right */
+    }
+
+    /* Nav item and link styling for mobile */
+    .navbar-nav {
+        flex-direction: column;
+        text-align: left;
+        padding: 30px 15px;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 20px 0;
+    }
+
+    .navbar-nav .nav-link {
+        color: #fff;
+        font-size: 20px;
+        font-family: 'Unlock', sans-serif;
+        font-weight: bold;
+        position: relative;
+    }
+
+    /* Add hover effect for nav-links */
+    .navbar-nav .nav-link::before {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #ff1177;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navbar-nav .nav-link:hover::before {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #ff1177;
+        text-shadow: 0px 0px 10px #ff1177, 0px 0px 20px #ff1177;
+    }
+
+    /* Navbar-toggler icon */
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+}
+
+
+/* Styles for Navbar in Desktop View */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        position: static; /* Remove fixed positioning in desktop */
+        height: auto;
+        background-color: transparent; /* No background in desktop */
+        width: auto;
+        transition: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .navbar-nav .nav-link {
+        color: #fff;
+        font-size: 17px;
+        margin-right: 25px;
+        padding: 5px 15px;
+        font-family: 'Unlock', sans-serif;
+        font-weight: bold;
+    }
+
+    .close-btn {
+        display: none; /* Hide close button in desktop */
+    }
+
+    /* Navbar-toggler hidden in desktop view */
+    .navbar-toggler {
+        display: none;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 17px;
+        color: #fff;
+        margin-right: 25px;
+        padding: 5px 15px;
+        font-family: 'Unlock', sans-serif;
+        font-weight: bold;
+        position: relative;
+    }
+    
+    .navbar-nav .nav-link::before {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #ff1177;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .navbar-nav .nav-link:hover::before {
+        width: 100%;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: #ff1177;
+        text-shadow: 0px 0px 10px #ff1177, 0px 0px 20px #ff1177;
+    }
+    
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+    /* position: relative; */
+    z-index: 20; /* Ensure the marquee is above the particles */
+    background-color: transparent; /* Optional: Add a background if needed */
+}
+
+.marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    color: #fff; /* Change text color to white */
+    font-size: 16px; /* Adjust the font size as needed */
+    animation: marquee 10s linear infinite; /* Updated speed for smoother scrolling */
+    will-change: transform; /* Helps with performance */
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%); /* Start from outside the right boundary */
+    }
+    to {
+        transform: translateX(-100%); /* Move to outside the left boundary */
+    }
+}
+
+
+/* Particles.js styles */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 1; /* Ensure particles.js is behind the text and navbar */
+}
+
+/* Main Section (Text and Timer) */
+.main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 85vh; /* Adjust the height to keep content centered */
+    position: relative;
+    z-index: 3; /* Keep this above the particles */
+    padding-top: 185px; /* Add padding so that content doesn't overlap */
+}
+
+.text-container {
+    text-align: center;
+}
+
+
+.text-details p {
+    font-size: 30px; /* Default font size for the paragraphs */
+    color: rgba(225, 225, 225, 0.8);
+    margin: 5px 0;
+    font-family: 'Coldiac', sans-serif; /* Apply Coldiac font family */
+}
+.text-details p:first-child {
+    font-size: 35px; /* Adjust font size as needed */
+    color: #FFD700; /* Golden color for neon effect */
+    font-family: 'Gotu', sans-serif; /* Apply Gotu font family */
+    text-shadow: 0px 0px 5px #FFD700, 0px 0px 10px #FFD700, 0px 0px 15px #FFD700, 0px 0px 20px #FFD700; /* Neon light effect */
+    padding-bottom: 20px; /* Add padding to separate the paragraphs */
+}
+
+.text-details p:nth-of-type(2) {
+    font-weight: bold; /* Bold the second paragraph */
+    font-size: 40px; /* Increase the size for the second paragraph */
+    padding-bottom: 15px;
+}
+
+.text-details p:last-of-type {
+    font-size: 24px; /* Decrease the size for the last paragraph */
+    font-style: italic;
+}
+
+.timer-text{
+    font-size: 25px;
+    color: rgba(225, 225, 225, 0.8);
+    font-family: 'Coldiac', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    z-index: 2;
+    font-style: italic;
+}
+
+.text-container h1 {
+    font-size: 150px;
+    color: rgba(225, 225, 225, 0.1);
+    background-image: url("https://th.bing.com/th/id/OIP.JyZ_Mj27nADjIKzRCHmDsgHaFj?w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3rm=2&dpr=1.3&pid=ImgDetMain");
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: animate 15s ease-in-out infinite;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: 'Protest Guerrilla', sans-serif;
+}
+
+/* Countdown timer styles */
+.countdown-timer {
+    margin-top: 20px;
+    font-size: 45px;
+    color: #fff;
+    font-family: 'Protest Guerrilla', sans-serif;
+    z-index: 2;
+    margin-bottom: 20px;
+
+}
+
+@keyframes animate {
+    0%, 100% {
+        background-position: left top;
+    }
+    25% {
+        background-position: right bottom;
+    }
+    50% {
+        background-position: left bottom;
+    }
+    75% {
+        background-position: right top;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .text-container h1 {
+        font-size: 80px; /* Adjust heading size for mobile */
+    }
+
+    .text-details p {
+        font-size: 20px; /* Adjust paragraph size */
+    }
+
+    .text-details p:first-child {
+        font-size: 25px; /* Adjust first paragraph size */
+    }
+
+    .text-details p:nth-of-type(2) {
+        font-size: 30px; /* Adjust second paragraph size */
+    }
+
+    .text-details p:last-of-type {
+        font-size: 18px; /* Adjust last paragraph size */
+    }
+
+    .countdown-timer {
+        font-size: 30px; /* Adjust timer size */
+    }
+    .timer-text{
+        font-size: 20px;
+        color: rgba(225, 225, 225, 0.8);
+        font-family: 'Coldiac', sans-serif;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        z-index: 2;
+        font-style: italic;
+    }
+}
+
+/* Extra small devices (phones) */
+@media (max-width: 480px) {
+    .text-container h1 {
+        font-size: 60px; /* Reduce heading size further for small devices */
+    }
+
+    .text-details p {
+        font-size: 18px; /* Further reduce paragraph size */
+    }
+
+    .text-details p:first-child {
+        font-size: 22px; /* Adjust for small devices */
+    }
+
+    .text-details p:nth-of-type(2) {
+        font-size: 28px; /* Second paragraph size */
+    }
+
+    .text-details p:last-of-type {
+        font-size: 16px; /* Smaller size for the last paragraph */
+    }
+
+    .countdown-timer {
+        font-size: 25px; /* Adjust timer size */
+    }
+    .timer-text{
+        font-size: 20px;
+        color: rgba(225, 225, 225, 0.8);
+        font-family: 'Coldiac', sans-serif;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        z-index: 2;
+        font-style: italic;}
+}
+
+/* About Section */
+.about-section {
+    z-index: 3;
+    padding: 50px 0;
+    background-color:transparent;
+    color: #fff;
+    margin-top: 50px;
+}
+
+.about-description {
+    padding: 20px;
+    font-family: 'Gotu', sans-serif;
+    font-size: 18px;
+}
+
+.about-description h2 {
+    font-family: 'Protest Guerrilla', sans-serif;
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #FFD700;
+    text-shadow: 0px 0px 5px #FFD700, 0px 0px 10px #FFD700;
+    text-align: center;
+}
+
+.about-description p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(225, 225, 225, 0.8);
+    text-align: justify;
+}
+.starts-in-text {
+    font-size: 20px;
+    color: rgba(225, 225, 225, 0.8);
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    z-index: 2;
+    font-style: italic;
+}
+
+
+/* Content for the department */
+.dept-info {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: rgba(225, 225, 225, 0.8);
+    font-family: 'Gotu', sans-serif;
+    margin-top: 30px; /* Increased margin-top to raise the section */
+    transition: transform 0.3s ease-in-out; /* Optional: Smooth transition for hover effect */
+    text-align: left; /* Align text to the left in dept-info */
+}
+
+.dept-info:hover {
+    transform: translateY(-10px); /* Optional: Adds a lift effect on hover */
+}
+
+.dept-info h3 {
+    color: #FFD700;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-shadow: 0px 0px 5px #FFD700, 0px 0px 10px #FFD700;
+}
+
+.dept-info p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.dept-logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding-top: 50px;
+    padding-left: 100px;
+}
+
+
+.about-section .row.mt-5 {
+    margin-top: 20px; /* Reduce margin-top to decrease space */
+}
+
+
+
+.about-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-image.small-logo {
+    width: 100%; /* Adjust the width percentage as needed */
+
+    height: 100%;
+}
+
+/* Ensure alignment for the EIELOGO image */
+.about-image.align-right {
+    display: block; /* Make the image a block element */
+    margin-left: auto; /* Push the image to the right by setting left margin to auto */
+    margin-right: auto; /* Remove any right margin (set to zero) */
+    width: 100%; /* Adjust width percentage as needed */
+    max-width: 150px; /* Set maximum width to ensure the image is not too large */
+    margin-top: 20px; /* Optional: Add some margin for spacing */
+}
+
+@media screen and (max-width: 480px) {
+  
+    .dept-logo {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .about-section {
+        z-index: 3;
+        padding: 50px 0;
+        background-color:transparent;
+        color: #fff;
+        margin-top: 50px;
+    }
+    
+    
+}
+
+/* Event Section */
+.event-section {
+    position: relative;
+    z-index: 3; /* Make sure the section is above the particles */
+    padding: 100px 0;
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    margin-top: 30px; /* Add margin to ensure it's spaced from the previous section */
+}
+
+.event-heading {
+    font-family: 'Protest Guerrilla', sans-serif;
+    font-size: 50px;
+    margin-bottom: 40px;
+    color: #FFD700;
+    text-shadow: 0px 0px 5px #FFD700, 0px 0px 10px #FFD700;
+    text-align: center;
+}
+
+/* Event Section */
+.event-section {
+    margin-top: 0px;
+}
+
+.event-title {
+    font-family: 'Protest Guerrilla', sans-serif;
+    font-size: 50px;
+    margin-bottom: 40px;
+    color: #FFD700;
+    text-shadow: 0px 0px 5px #FFD700, 0px 0px 10px #FFD700;
+}
+
+.event-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+}
+
+.event-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.event-card .btn {
+    margin-top: 10px;
+}
+
+/* Modal Styles */
+.modal-header {
+    background-color: #FFD700;
+    color: #000;
+}
+
+.modal-body {
+    font-family: 'Gotu', sans-serif;
+    font-size: 18px;
+    color: rgba(10, 0, 0, 0.981);
+}
+
+.modal-body .btn-success {
+    margin-top: 20px;
+}
+
+.event-card img {
+    width: 100%; /* Ensures the image takes the full width of the card */
+    height: auto; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image maintains aspect ratio and covers the space */
+    border-radius: 5px;
+}
+
+
+.event-card button {
+    background-color:#ff1177; /* Set the button background to the desired color */
+    color: white; /* Ensures the text is visible on the button */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.event-card button:hover {
+    background-color:#bc1e63; /* Slightly darker shade on hover */
+}
+
+/* Add spacing between rows */
+.event-section .row {
+    padding-bottom: 40px; /* Adds space between rows */
+}
+
+/* Center the last row */
+.event-section .row:last-child {
+    display: flex;
+    justify-content: center;
+}
+
+/* Optional: You can reduce the width of the cards if needed for better centering */
+.event-section .card {
+    max-width: 300px;
+}
+
+.about-section .col-md-3 {
+    padding-right: 30px;
+}
+
+.modal-content {
+    color: black; /* Ensure all text in the modal is black */
+    font-family: Arial, sans-serif; /* Optional: Adjust the font if needed */
+    line-height: 1.6; /* Improve readability */
+    padding: 20px; /* Add some padding inside the modal */
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.modal-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.register-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.register-button:hover {
+    background-color: #0056b3;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 767px) {
+    /* Event Section Title */
+    .event-title {
+        font-size: 50px; /* Make the title smaller for mobile */
+        margin-bottom: 20px; /* Adjust the spacing below the title */
+    }
+
+    /* Event Cards Layout */
+    .event-section .col-md-3 {
+        flex: 0 0 100%; /* Make each event card take up the full width */
+        max-width: 100%;
+        margin-bottom: 20px; /* Add some spacing between cards */
+        padding-left: 50px;
+    }
+
+    /* Adjust the card images for better aspect ratio */
+    .event-card img {
+        height: auto;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    /* Adjust the button size */
+    .event-card button {
+        font-size: 14px; /* Smaller button text for mobile */
+        padding: 8px 15px; /* Adjust padding */
+    }
+
+    /* Modal styling */
+    .modal-dialog {
+        max-width: 90%; /* Make the modal smaller and more centered on mobile */
+        margin: 30px auto; /* Adjust the modal margins */
+    }
+
+    .modal-header {
+        padding: 15px;
+    }
+
+    .modal-body {
+        font-size: 16px; /* Smaller modal text size for readability */
+    }
+
+    .modal-body .btn-success {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
+
+/* Media Query for Small Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Event Section Title */
+    .event-title {
+        font-size: 50px; /* Reduce the title size further */
+        margin-bottom: 15px; /* Adjust spacing below the title */
+    }
+
+    /* Event Cards Layout */
+    .event-section .col-md-3 {
+        flex: 0 0 100%; /* Each card takes full width */
+        max-width: 100%;
+        margin-bottom: 15px; /* Reduce space between cards */
+        padding-left: 50px;
+    }
+
+    /* Event Card Image */
+    .event-card img {
+        height: auto;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    /* Event Card Button */
+    .event-card button {
+        font-size: 12px; /* Reduce button font size */
+        padding: 6px 12px; /* Smaller padding for the button */
+    }
+
+    /* Modal Dialog */
+    .modal-dialog {
+        max-width: 95%; /* Take up almost the entire screen width */
+        margin: 20px auto; /* Adjust margins for smaller screens */
+    }
+
+    .modal-header {
+        padding: 10px;
+    }
+
+    .modal-body {
+        font-size: 14px; /* Further reduce modal text size */
+    }
+
+    .modal-body .btn-success {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    /* Adjust Container Padding */
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Reduce Button Margin in Modal */
+    .modal-body .btn-success {
+        margin-top: 10px; /* Reduce top margin of the modal button */
+    }
+}
+
+
+#team {
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Ensures the cards are above the background */
+}
+
+.section-title {
+    font-family: 'Protest Guerrilla', sans-serif;
+    font-size: 50px;
+    margin-bottom: 60px;
+    color: #FFD700;
+    text-shadow: 0px 0px 5px #FFD700, 0px 0px 10px #FFD700;
+    text-align: center;
+    z-index: 2; /* Ensures the title is above the particles */
+
+}
+
+.team-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px; /* Adds spacing between the cards */
+}
+
+.second-row {
+    justify-content: center;
+    margin-top: 100px; /* Space between first and second row */
+}
+
+.team-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 3; /* Ensures the cards are on top of the particles */
+}
+
+.team-card img {
+    width: 100%;
+    border-radius: 50%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.team-card h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.team-card p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+#image-scroll {
+    margin-top: 60px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2; /* Ensures scroller is above background elements */
+}
+
+.scroll-container {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 2; /* Keeps it above other content */
+}
+
+.scroll-content {
+    display: flex;
+    width: calc(250px * 30); /* Adjust width based on image count */
+    animation: scroll 30s linear infinite; /* Adjust speed if necessary */
+    z-index: 2; /* Makes sure the scrolling content is visible */
+}
+
+.scroll-content img {
+    width: 250px;
+    height: 250px;
+    margin-right: 10px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.faq-container {
+    margin: 40px auto;
+    max-width: 800px;
+    text-align: left;
+    z-index: 2; /* Ensure the FAQ section is above the particles */
+}
+
+.faq-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'Protest Guerrilla', sans-serif;
+    color: #FFD700;
+    text-shadow: 0px 0px 5px #FFD700, 0px 0px 10px #FFD700;
+    font-size: 30px;
+}
+
+.faq-container details {
+    margin-bottom: 20px;
+}
+
+.faq-container summary {
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff8f8;
+    
+}
+
+.faq-container .faq-content {
+    margin-top: 10px;
+    padding-left: 20px;
+    font-size: 1rem;
+    color: #fff8f8;
+}
+
+.faq-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.faq-container a:hover {
+    text-decoration: underline;
+}
+
+/* Media Query for Small Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .faq-container {
+        margin: 20px auto; /* Reduce the margin for smaller screens */
+        padding: 0 10px; /* Add some padding to prevent text from touching screen edges */
+        max-width: 100%; /* Ensure it takes full width on smaller screens */
+    }
+
+    .faq-container h1 {
+        font-size: 2rem; /* Reduce the FAQ heading size */
+        margin-bottom: 15px; /* Adjust margin below the title */
+        text-align: center; /* Keep title centered */
+    }
+
+    .faq-container summary {
+        font-size: 1rem; /* Adjust summary font size for better readability */
+        font-weight: bold;
+        color: #fff8f8; /* Keep the same color */
+    }
+
+    .faq-container .faq-content {
+        font-size: 0.9rem; /* Slightly reduce the content font size */
+        padding-left: 15px; /* Adjust padding for smaller screens */
+    }
+
+    .faq-container details {
+        margin-bottom: 15px; /* Reduce space between FAQ items */
+    }
+
+    .faq-container a {
+        font-size: 0.9rem; /* Adjust link font size */
+    }
+}
+
+
+/* Footer Section Styles */
+footer {
+    background-color: #202020; /* Dark background for the footer */
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    z-index: 2; /* Ensure the footer is above the particles */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px 0;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 20px;
+    max-width: 300px;
+}
+
+.footer-section-about img {
+    width: 100px;
+    height: auto;
+}
+
+.footer-section-about .quote {
+    margin-top: 15px;
+    font-size: 18px;
+    font-style: italic;
+    font-family: 'Coldiac', serif;
+}
+
+.footer-section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-family: 'Protest Guerrilla', sans-serif;
+}
+
+
+.footer-section h3 {
+    padding-top: 30px;
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-family: 'Protest Guerrilla', sans-serif;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #f39c12;
+}
+
+.footer-section.contact p,
+.footer-section.contact .phone-no {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.phone-no a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.phone-no a:hover {
+    color: #f39c12;
+}
+
+.footer-section.contact .phone-no svg {
+    vertical-align: middle;
+}
+
+.footer-section-socials {
+    margin-top: 15px;
+}
+
+.footer-section-socials a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.footer-section-socials img {
+    transition: transform 0.3s ease;
+}
+
+.footer-section-socials img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 14px;
+    font-family: 'Coldiac', serif;
+    border-top: 1px solid #555;
+    padding: 15px 0;
+}
+
+.footer-bottom span {
+    font-style: italic;
+}
+
+/* Responsive adjustments for footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        max-width: 90%;
+        margin: 20px 0;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+}
+
+.footer-section.map {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.footer-section.map h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section.map iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.designer-name {
+    font-size: 14px;
+    margin-top: 15px;
+    color: #ddd;
+}
+
